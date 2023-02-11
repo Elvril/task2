@@ -82,7 +82,7 @@ class OnBoardingScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 40,
+              height: 70,
             ),
           ],
         ),
