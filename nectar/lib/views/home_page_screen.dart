@@ -107,45 +107,51 @@ class _HomePageScreenState extends State<HomePageScreen> {
                       mainAxisSpacing: 15,
                     ),
                     itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(images[index]),
-                            alignment: const Alignment(0, -0.5),
-                          ),
-                          border: Border.all(
-                            width: 1,
+                      return GestureDetector(
+                        onTap: () {
+                          print("you selected: ${titleProducts[index]}");
+                        },
+
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(images[index]),
+                              alignment: const Alignment(0, -0.5),
+                            ),
+                            border: Border.all(
+                              width: 1,
+                              color: index == 0 || index == 1
+                                  ? colors[index].withOpacity(0.7)
+                                  : colors[index].withOpacity(1.0),
+                            ),
+                            borderRadius: BorderRadius.circular(18),
                             color: index == 0 || index == 1
-                                ? colors[index].withOpacity(0.7)
-                                : colors[index].withOpacity(1.0),
+                                ? colors[index].withOpacity(0.1)
+                                : colors[index].withOpacity(0.25),
                           ),
-                          borderRadius: BorderRadius.circular(18),
-                          color: index == 0 || index == 1
-                              ? colors[index].withOpacity(0.1)
-                              : colors[index].withOpacity(0.25),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Expanded(child: SizedBox()),
-                              Padding(
-                                padding: index == 0 || index == 1
-                                    ? const EdgeInsets.only(bottom: 15)
-                                    : const EdgeInsets.only(bottom: 30),
-                                child: Text(
-                                  titleProducts[index],
-                                  textAlign: TextAlign.center,
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    fontFamily: "Questrial",
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Expanded(child: SizedBox()),
+                                Padding(
+                                  padding: index == 0 || index == 1
+                                      ? const EdgeInsets.only(bottom: 15)
+                                      : const EdgeInsets.only(bottom: 30),
+                                  child: Text(
+                                    titleProducts[index],
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: "Questrial",
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       );

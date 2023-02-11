@@ -9,8 +9,6 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-final TextEditingController _test = TextEditingController();
-
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
@@ -58,12 +56,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 30),
                   IntlPhoneField(
-                    initialCountryCode: 'DZ',
+                    initialCountryCode: "DZ",
                     onChanged: (phone) {
-                      // print(phone.completeNumber);
+                      print(phone.completeNumber);
                     },
                     onCountryChanged: (country) {
-                      // print('Country changed to: ' + country.name);
+                      print("Country changed to: ${country.name}"  );
                     },
                   ),
                   const SizedBox(height: 40),
